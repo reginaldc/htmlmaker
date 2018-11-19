@@ -1,0 +1,172 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html><head>
+<title>Classic HTML Gallery</title>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<meta name="Author" content="httphotos">
+<style type="text/css">
+        h1, h2 {
+            border: rgb(102, 0, 0) 2px solid;
+            border-left: 1px none;
+            border-right: 1px none;
+            border-top: 1px none;
+            margin-bottom: 1em;
+            margin-left: -10px;
+            margin-right: 0px;
+            padding: 20px;
+            width: 98%;
+            display: block;
+            color:  rgb(102, 0, 0);
+            font-size: 18px;
+            font-weight: bold;
+            letter-spacing: 4px;
+            text-align: right;
+            height: 21px;
+            position: relative;
+        }
+        h2:first-letter {
+            color: rgb(102, 0, 0);
+            font-weight: bold;
+            font-size: 24pt;
+        }
+        a, a:link,a:visited,a:active {
+            color: rgb(102, 0, 0);
+            text-decoration: none;
+        }
+        a:hover {
+            color: rgb(255, 0, 0);
+            text-decoration: none;
+        }
+        .header {
+        text-align: center;
+        display: block;
+        width: 1600px;
+        height: 150px;
+        position: relative;
+        top: 10px;
+        left: 100px;
+        }
+        .pagination {
+        display: inline-block;
+        position: relative;
+        top: 80px;
+        left: -200px;
+        background-color: red;
+       }
+       .pagination a {
+            float: left;
+            padding: 8px 16px;
+            text-decoration : none;
+            border: 1px solid #ddd;
+            color: black;
+        }
+        .pagination a.active {
+            background-color: #4CAF50;
+            border: 1px solid #4CAF50;
+            color: white;
+        }
+        .pagination a:hover:not(.active) {
+            background-color: #ddd;
+        }
+        .pagination a:first-child {
+            border-top-left-radius: 5px;
+            border-bottom-left-radius: 5px;
+        }
+        .pagination a:last-child {
+            border-top-right-radius: 5px;
+            border-bottom-right-radius: 5px;
+        }
+        .pagination .current {
+            background-color: yellow;
+        }
+        .bottompagination {
+            display: inline-block;
+            background-color: red;
+        }
+        .bottompagination a {
+            float: left;
+            padding: 8px 16px;
+            text-decoration : none;
+            border: 1px solid #ddd;
+            color: black;
+        }
+        .bottompagination a.active {
+            background-color: #4CAF50;
+            border: 1px solid #4CAF50;
+            color: white;
+        }
+        .bottompagination a:hover:not(.active) {
+            background-color: #ddd;
+        }
+        .bottompagination a:first-child {
+            border-top-left-radius: 5px;
+            border-bottom-left-radius: 5px;
+        }
+        .bottompagination a:last-child {
+            border-top-right-radius: 5px;
+            border-bottom-right-radius: 5px;
+        }
+        .bottompagination .current {
+        background-color: yellow;
+        }
+        body {
+            font-family: Trebuchet MS, sans-serif; font-size: larger;
+            margin-bottom: 20px;
+            margin-top: 0px;
+            color: rgb(102, 0, 0);
+            background-image: url("background.jpg"); background-repeat: repeat;
+        }
+        div#linkprev {position: fixed; left: 10px; top:300px;
+        float: right;}
+        div#linknext {position: fixed; right: 10px; top:300px;	
+        float: right;}
+        .vidslink {
+            display: inline-block;
+            position: relative;
+            left: -200px;
+            top: 10px;
+        }
+       .picslink {
+            display: inline-block;
+            position: relative;
+            left: 800px;
+            top: 5px;
+        }
+        td {
+            text-align: center;
+        }
+        img {
+            border-style: solid;
+            border-color: rgb(0,0,0);
+            border-width: 0px;
+        }
+        table.center {
+            position: relative;
+            top: 200px;
+            left: -50px;
+            margin-left:auto; margin-right:auto;
+        }
+        .footer {
+            text-align: center;
+            width: 1600px;
+            height: 150px;
+            position: relative;
+            bottom: -250px;
+            left: 100px;
+        }
+</style>
+</head>
+<body>
+<h2>Overzicht documenten</h2>
+<div class="header">
+    <div class="picslink"></div>
+    <div class="vidslink"></div>
+    <div class="pagination"></div>
+</div>
+<div id="linkprev" class="btnspec"></div>
+<div id="linknext" class="btnspec"></div>
+<table class="center">
+</table>
+<div class="footer">
+        <div class="bottompagination"></div>
+</div>
+</body></html>

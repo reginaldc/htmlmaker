@@ -1,0 +1,188 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+ <head>
+  <title>
+   gallerij
+  </title>
+  <meta content=""/>	
+	<link rel="stylesheet" href="css/bootstrap.css" type="text/css" media="screen" />	
+	<!--<link rel='stylesheet' href="/Justified-Gallery/bower_components/swipebox/src/css/swipebox.min.css" media='screen' />
+	<script src="/Justified-Gallery/bower_components/swipebox/src/js/jquery.swipebox.min.js"></script>-->
+	<link rel="stylesheet" href="css/justifiedGallery.css" type="text/css" media="all" />	
+	<link rel="stylesheet" href="css/font.css" />
+	<link rel="stylesheet" href="css/font-awesome.min.css" />
+	<link rel="stylesheet" href="css/syntax.css" type="text/css" media="screen" />
+	<link rel="stylesheet" href="css/style.css" />
+	<link rel="stylesheet" href="css/colorbox.css" type="text/css" media="screen" />
+	<!--<link rel="stylesheet" type="text/css" media="all" href="css/lightbox.css">	-->
+	<script src="js/jquery.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+	<script src="js/bootstrap.min.js"></script>    
+    <script src="js/jquery.justifiedGallery.min.js"></script>
+    <script src="js/jquery.colorbox-min.js"></script>
+    <script src="js/yarp.min.js"></script>
+    <!--<script src="js/lightbox.js"></script>-->
+    <style>
+    div#linkprev {position: fixed; left: 10px; top:300px;				
+			float: right;}
+	div#linknext {position: fixed; right: 10px; top:300px;	
+			float: right;}
+    .linkerpan {        
+        float: left;
+        background-repeat: repeat-y;
+        background-image: url("images/borderfaderechts.png");
+        width: 250px;
+        height: 1500px;
+    }
+    .rechterpan {
+        
+        float: right;
+        background-repeat: repeat-y;
+        background-image: url("images/borderfadelinks.png");
+        width: 200px;
+        height: 1500px;
+    }
+    .header {
+        text-align: center;
+        display: block;
+        width: 1600px;
+        height: 150px;
+    }
+    .titel {
+        position: absolute;
+        left: 120px;
+        font: bold;
+        font-size: 30px;
+    }
+    .vidslink {
+        display: inline-block;
+        float: left;
+        left: -400px;        
+   }
+   .docslink {
+        display: inline-block;
+        float: right;
+        left: 1400px;        
+   }
+    .pagination {
+        display: inline-block;
+        position: relative;        
+        top: 80px;
+        background-color: red;
+   }
+   .pagination a {
+        float: left;
+        padding: 8px 16px;
+        text-decoration : none;
+        border: 1px solid #ddd;
+        color: black;
+    }
+    .pagination a.active {
+        background-color: #4CAF50;
+        border: 1px solid #4CAF50;
+        color: white;
+    }
+    .pagination a:hover:not(.active) {
+        background-color: #ddd;
+    }
+    .pagination a:first-child {
+        border-top-left-radius: 5px;
+        border-bottom-left-radius: 5px;
+    }
+    .pagination a:last-child {
+        border-top-right-radius: 5px;
+        border-bottom-right-radius: 5px;
+    }
+    .pagination .current {
+        background-color: yellow;
+    }
+    .bottompagination {
+        display: inline-block;       
+        background-color: red;
+    }
+    .bottompagination a {
+        float: left;
+        padding: 8px 16px;
+        text-decoration : none;
+        border: 1px solid #ddd;
+        color: black;
+    }
+    .bottompagination a.active {
+        background-color: #4CAF50;
+        border: 1px solid #4CAF50;
+        color: white;
+    }
+    .bottompagination a:hover:not(.active) {
+        background-color: #ddd;
+    }
+    .bottompagination a:first-child {
+        border-top-left-radius: 5px;
+        border-bottom-left-radius: 5px;
+    }
+    .bottompagination a:last-child {
+        border-top-right-radius: 5px;
+        border-bottom-right-radius: 5px;
+    }
+    .space {
+        display: block;
+        width: 1600px;
+        height: 150px;
+    }
+    .bottompagination .current {
+        background-color: yellow;
+    }
+   .container {
+        position: relative;
+        top: 80px;
+        margin: auto;
+        width: 75%;
+        padding: 10px;
+    }
+    .footer {
+        text-align: center;
+        display: block;
+        width: 1600px;
+        height: 150px;
+    }
+    </style>
+    <script>
+		colorboxConf = {
+			maxWidth : '80%',
+			maxHeight : '80%',
+			opacity : 0.8,
+			transition : 'elastic',
+			rel:'gallerij',
+			slideshow : true,
+			current : ''
+		};
+	</script>
+ </head>
+ <body>
+ <div class="linkerpan"></div>
+ <div class="rechterpan"></div>
+ <div class="header">
+    <div class="titel">Gallerij</div>
+    <div class="docslink"></div>
+    <div class="vidslink"></div>
+    <div class="pagination"></div>
+ </div> 
+ <div id="linkprev" class="btnspec"></div>
+ <div id="linknext" class="btnspec"></div> 
+ <div class="container">     
+        <div class="liveDemo">
+        </div>
+            <script>
+            $('.liveDemo').justifiedGallery().on('jg.complete', function () {
+                        $('.xpic').colorbox(colorboxConf);
+                    });   
+
+            $('.element').yarp({colors: ['gray','red','green','blue']});
+            </script>  
+    </div>
+    <div class="space"></div>
+    <div class="footer">
+        <div class="bottompagination"></div>
+    </div>
+ </body>
+</html>
